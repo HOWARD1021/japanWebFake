@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="home">
+
+    <div class="contentsArea">
+      <div class="contentsArea_main">
+
+        <div class="homeSection homeSectionService">
+          <section id="SEC02">
+            <h2 class="titleMain titleTopH2">
+              <span class="titleMain_en js-splitText" data-split-duration=".74" data-split-anime-delay="0" data-split-ease="CustomEase01">Service</span>
+            </h2>
+            <div class="serviceList js-st-fixed-content-container">
+              <div class="serviceListItemWrap">
+                <div class="serviceListItem " data-marker-content="js-st-img1">
+                  
+                  <div class="serviceListContent">
+                    <div class="js-st-fixed-contentMarkerInner">
+                      <h3 class="serviceListTitle">資産運用サービス<span class="serviceListSubTitle">お客様のビジョン実現のために</span></h3>
+                      <p class="serviceListText">これまでの証券会社の枠組みにとらわれず、お客様のビジョン実現のために、資産運用をはじめとした的確なソリューションを提供していきます。</p>
+                      <p class="linkNextBlock">
+                        <a href="https://www.akatsuki-sc.com/" target="_blank" class="linkNext linkNextSlanted"><span class="linkNextIcon"><span class="arrow"></span></span>
+                        <span class="linkNext_line">資産運用サービスサイト</span></a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="serviceListImageSp">
+                    <img class="js-scrabFadeImageChangerTarget" src="./img/car.jpg" alt="">
+                  </div>
+                </div>
+                <div class="serviceListItem " data-marker-content="js-st-img2">
+                  <div class="js-st-fixed-contentMarkerInner">
+                    <div class="serviceListImageSp">
+                      <img class="js-scrabFadeImageChangerTarget" src="./img/W0.jpg" alt="">
+                    </div>
+                    <div class="serviceListContent js-scrabFadeImageChanger" data-index='2'>
+                      <h3 class="serviceListTitle"><span class="en">IFA</span>支援サービス<span class="serviceListSubTitle">IFAビジネスの支援を通して未来を創る</span></h3>
+                      <p class="serviceListText">高度な金融知識をベースに顧客本位なアドバイスを行うIFA。私たちはIFA事業者のためのプラットフォームとして、人々の豊かな暮らしをサポートします。</p>
+                      <p class="linkNextBlock">
+                        <a href="https://www.akatsuki-sc.com/ifa_business/" target="_blank" class="linkNext linkNextSlanted"><span class="linkNextIcon"><span class="arrow"></span></span>
+                        <span class="linkNext_line">IFA支援サービスサイト</span></a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="serviceListItem " data-marker-content="js-st-img3">
+                  <div class="js-st-fixed-contentMarkerInner">
+                    <div class="serviceListImageSp">
+                      <img class="js-scrabFadeImageChangerTarget" src="./img/W1.jpg" alt="">
+                    </div>
+                    <div class="serviceListContent js-scrabFadeImageChanger" data-index='3'>
+                      <h3 class="serviceListTitle">金融機関向けサービス<span class="serviceListSubTitle">アライアンスを通じてビジョンの実現をサポート</span></h3>
+                      <p class="serviceListText">これまで培ったサポート力を活かし、提携する金融機関のお客様に魅力ある商品・サービスを提供し、ビジョンの実現をサポートします。<br>（2021年10月現在、提携金融機関6社）</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="serviceListImagesWrap js-st-fixed-content">
+                <div class="st-fixed-content-inner">
+                  <div id="js-st-img1" class="st-fixed-contentItem">
+                    <img class="" src="/assets/images/top/img_top_service01@2x.jpg" alt="">
+                  </div>
+                  <div id="js-st-img2" class="st-fixed-contentItem">
+                    <img src="/assets/images/top/img_top_service02@2x.jpg" alt="">
+                  </div>
+                  <div id="js-st-img3" class="st-fixed-contentItem">
+                    <img src="/assets/images/top/index_img_03.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+
+
+
+      </div><!-- .contentsArea_main -->
+    </div><!-- .contentsArea -->
+
+  </div><!-- .js-scroll-container -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-3.6.0.min.js"><\/script>');</script>
+  <script defer src="/assets/js/lib/utilityModule.min.js?ver=0.0.4"></script>
+  <script defer src="/assets/js/lib/stickyfill.min.js?ver=0.0.1"></script>
+  <script defer src="/assets/js/main.js?ver=0.0.1"></script>
+  <script>
+    $(".newsTab_a").on("click", function () {
+      $(".newsTab_a").parent(".newsTab_content").removeClass("-current");
+      $(this).parent(".newsTab_content").addClass("-current");
+
+      var cat = this.dataset.category;
+      $.ajax({
+        type: "post",
+        url: ajaxurl,
+        cache: false,
+        dataType: "html",
+        data: {
+          action: "select_category",
+          cat: cat
+        },
+        success: function(data) {
+          $("#news_async").html(data);
+        }
+      });
+    });
+  </script>
+
+<script type='text/javascript' src='https://corp.akatsuki-sc.com/wp/wp-includes/js/wp-embed.min.js?ver=5.8.1' id='wp-embed-js'></script>
+</body>
+
+</html>
